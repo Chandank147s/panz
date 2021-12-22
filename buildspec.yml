@@ -12,6 +12,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
+      - sudo service docker start
       - docker build -t  $REPOSITORY_URI:panz-${CODEBUILD_BUILD_NUMBER} .
   post_build:
     commands:
